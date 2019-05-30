@@ -18,25 +18,24 @@
 //
 //// Array for pictures 
 //vector<Mat> imgs;
-//int counter = 0;
 //
-//int main(int argc, char* argv[])
+//int main()
 //{
+//	String path = "panorama/img";
 //	// Get all the images that need to be  
 //	// stitched as arguments from command line  
-//	while (counter<5)
+//	for (int i = 1; i < 8; ++i)
 //	{
 //		// Read the ith argument or image  
 //		// and push into the image array 
-//		Mat img = imread("lena.jpg");
+//		Mat img = imread(path + to_string(i)+".jpg");
 //		if (img.empty())
 //		{
 //			// Exit if image is not present 
-//			cout << "Can't read image '" << "sample.jpg" << "'\n";
+//			cout << "Can't read image '" << path + to_string(i) << "'\n";
 //			return -1;
 //		}
 //		imgs.push_back(img);
-//		counter++;
 //	}
 //
 //	// Define object to store the stitched image 
@@ -58,8 +57,9 @@
 //
 //	// Store a new image stiched from the given  
 //	//set of images as "result.jpg" 
-//	//imwrite("result.jpg", pano);
+//	imwrite("result.jpg", pano);
 //
+//	namedWindow("Result", WINDOW_NORMAL);
 //	// Show the result 
 //	imshow("Result", pano);
 //

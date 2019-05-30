@@ -150,12 +150,14 @@
     <ClCompile Include="Erosion_Dilation.cpp" />
     <ClCompile Include="Final_Project.cpp" />
     <ClCompile Include="Lighten_Darken.cpp" />
+    <ClCompile Include="Panorama.cpp" />
     <ClCompile Include="Resize.cpp" />
     <ClCompile Include="test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Canny.h" />
     <ClInclude Include="Erosion_Dilation.h" />
+    <ClInclude Include="Panorama.h" />
     <ClInclude Include="Resize.h" />
     <ClInclude Include="Lighten_Darken.h" />
   </ItemGroup>

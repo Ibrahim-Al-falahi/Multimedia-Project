@@ -5,6 +5,7 @@
 #include "Resize.h"
 #include "Erosion_Dilation.h"
 #include "Canny.h"
+#include "Panorama.h"
 #include<opencv2/opencv.hpp>
 
 
@@ -14,7 +15,7 @@ using namespace std;
 int iSliderValue1, iSliderValue2, iSliderValue3, iSliderValue4, iSliderValue5, iSliderValue6, iSliderValue7;
 Mat src, l;
 int i;
-String img;
+String img , path;
 int main()
 {
 	cout << "Project demo" << endl;
@@ -94,6 +95,17 @@ int main()
 
 		}
 	}
-	else if(i==2){}
+	else if(i==2){
+
+		cout << "Please enter an Images path : " << endl;
+		cin >> path;
+		Mat Panorama = Stitching(path);
+		namedWindow("Panorama", WINDOW_NORMAL);
+		while (true)
+		{
+			imshow("Panorama", Panorama);
+			waitKey(33);
+		}
+	}
 	
 }
