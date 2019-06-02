@@ -7,7 +7,7 @@
 using namespace cv;
 
 
-Mat changeErosion(Mat orignal, Mat modified, int type, double value);
-Mat changeDilation(Mat orignal, Mat modified, int type, double value);
+Mat changeErosion(Mat orignal, int type, double value);
+Mat changeDilation(Mat orignal, int type, double value);
 
 #endif

@@ -5,7 +5,9 @@
 using namespace cv;
 
 
-Mat changeBrightness(Mat orignal, Mat modified, double value) {
+Mat changeBrightness(Mat orignal, double value) {
+
+	Mat modified;
 	double bright = value - 50;
 	bright = bright * 3;
 	orignal.convertTo(modified, -1, 1, bright);

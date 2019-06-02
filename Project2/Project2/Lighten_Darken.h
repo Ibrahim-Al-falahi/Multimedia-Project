@@ -7,6 +7,6 @@
 using namespace cv;
 
 
-Mat changeBrightness(Mat orignal, Mat modified, double value);
+Mat changeBrightness(Mat orignal, double value);
 
 #endif

@@ -5,8 +5,9 @@
 
 using namespace cv;
 
-Mat changeErosion(Mat orignal, Mat modified, int type, double value) {
+Mat changeErosion(Mat orignal, int type, double value) {
 
+	Mat modified;
 	int erosion_type = 0;
 	if (type == 0) { erosion_type = MORPH_RECT; }
 	else if (type == 1) { erosion_type = MORPH_CROSS; }
@@ -19,8 +20,9 @@ Mat changeErosion(Mat orignal, Mat modified, int type, double value) {
 	return modified;
 }
 
-Mat changeDilation(Mat orignal, Mat modified, int type, double value) {
-
+Mat changeDilation(Mat orignal, int type, double value) {
+	
+	Mat modified;
 	int dilation_type = 0;
 	if (type == 0) { dilation_type = MORPH_RECT; }
 	else if (type == 1) { dilation_type = MORPH_CROSS; }

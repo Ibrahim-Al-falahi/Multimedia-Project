@@ -12,7 +12,7 @@
 using namespace cv;
 using namespace std;
 
-int iSliderValue1, iSliderValue2, iSliderValue3, iSliderValue4, iSliderValue5, iSliderValue6, iSliderValue7;
+int iSliderValue1, iSliderValue2, iSliderValue3, iSliderValue4, iSliderValue5, iSliderValue6, iSliderValue7, iSliderValue8;
 Mat src, l;
 int i;
 String img , path;
@@ -52,18 +52,19 @@ int main()
 		iSliderValue5 = 0;
 		iSliderValue6 = 0;
 		iSliderValue7 = 0;
+		iSliderValue8 = 0;
 
 
-
-
+		
 		//createTrackbar("ContrastBar", "Contrast", &iSliderValue2, 100);
-		createTrackbar("Brightness Bar: ", "Control", &iSliderValue1, 100);
-		createTrackbar("Width Bar: ", "Control", &iSliderValue2, 100);
-		createTrackbar("Hight Bar: ", "Control", &iSliderValue3, 100);
+		createTrackbar("Brightness Bar", "Control", &iSliderValue1, 100);
+		createTrackbar("Width Bar", "Control", &iSliderValue2, 100);
+		createTrackbar("Hight Bar", "Control", &iSliderValue3, 100);
 		createTrackbar("Element:\n 0: Rect \n 1: Cross \n 2: Ellipse", "Control", &iSliderValue4, 2);
-		createTrackbar("Erosion Bar: ", "Control", &iSliderValue5, 21);
-		createTrackbar("Dilation Bar: ", "Control", &iSliderValue6, 21);
-		createTrackbar("Canny Bar: ", "Control", &iSliderValue7, 100);
+		createTrackbar("Erosion Bar", "Control", &iSliderValue5, 21);
+		createTrackbar("Dilation Bar", "Control", &iSliderValue6, 21);
+		createTrackbar("canny1", "Control", &iSliderValue7, 100);
+		createTrackbar("canny2", "Control", &iSliderValue8, 100);
 
 
 
@@ -77,11 +78,11 @@ int main()
 			double width = iSliderValue3 + 200;*/
 			//src.convertTo(l, -1, Contrast, 0);
 			//src.convertTo(brightness, -1, 1, bright);
-			Mat Bright = changeBrightness(src, l, iSliderValue1);
-			Mat Resize = Resizing(src, l, iSliderValue2, iSliderValue3);
-			Mat Erosion = changeErosion(src, l, iSliderValue4, iSliderValue5);
-			Mat Dilation = changeDilation(src, l, iSliderValue4, iSliderValue6);
-			Mat Canny = EdgeDetection(src, l, iSliderValue7);
+			Mat Bright = changeBrightness(src, iSliderValue1);
+			Mat Resize = Resizing(src, iSliderValue2, iSliderValue3);
+			Mat Erosion = changeErosion(src, iSliderValue4, iSliderValue5);
+			Mat Dilation = changeDilation(src, iSliderValue4, iSliderValue6);
+			Mat Canny = EdgeDetection(src, iSliderValue7, iSliderValue8);
 
 			//imshow("Contrast", l);
 			imshow("Brightness", Bright);

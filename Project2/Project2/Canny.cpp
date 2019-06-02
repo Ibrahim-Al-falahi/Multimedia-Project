@@ -5,9 +5,9 @@
 
 using namespace cv;
 
-Mat EdgeDetection(Mat orignal, Mat modified, double value)
+Mat EdgeDetection(Mat orignal, double threshold1, double threshold2)
 {
-	Mat src_gray, detected_edges;
+	Mat src_gray, detected_edges, modified;
 
 	/// Create a matrix of the same type and size as src (for dst)
 	modified.create(orignal.size(), orignal.type());
@@ -19,7 +19,7 @@ Mat EdgeDetection(Mat orignal, Mat modified, double value)
 	blur(src_gray, detected_edges, Size(3, 3));
 
 	/// Canny detector
-	Canny(detected_edges, detected_edges, value, value*3, 3);
+	Canny(detected_edges, detected_edges, threshold1, threshold2 *3, 3);
 
 	/// Using Canny's output as a mask, we display our result
 	modified = Scalar::all(0);

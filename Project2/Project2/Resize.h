@@ -7,6 +7,6 @@
 using namespace cv;
 
 
-Mat Resizing(Mat orignal, Mat modified, double hight, double width);
+Mat Resizing(Mat orignal, double hight, double width);
 
 #endif

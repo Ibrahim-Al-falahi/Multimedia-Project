@@ -7,6 +7,6 @@
 using namespace cv;
 
 
-Mat EdgeDetection(Mat orignal, Mat modified, double value);
+Mat EdgeDetection(Mat orignal, double threshold1, double threshold2);
 
 #endif
